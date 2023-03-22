@@ -46,7 +46,7 @@ static void usage(char** argv)
     printf("\n");
 }
 
-int main(int argc, char** argv)
+int ipwnder_lite_main(int argc, char** argv)
 {
     int ret = 0;
     
