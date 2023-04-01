@@ -13,7 +13,7 @@ jobs:
     steps:
     - name: envdetails
       run: ls && echo && pwd
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: envdetails
       run: ls && echo && pwd
     - name: download libs
