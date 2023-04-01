@@ -13,9 +13,11 @@ jobs:
     steps:
     - name: envdetails
       run: ls && echo && pwd
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v2
+    - name: download submodules
+      run: git submodule update --init
     - name: envdetails
-      run: ls && echo && pwd
+      run: ls && echo && ls ra1npoc && pwd
     - name: download libs
       run: cd CI_scripts && chmod +x download_libs.sh && ./download_libs.sh
     - name: regrets
