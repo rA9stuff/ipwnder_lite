@@ -1,0 +1,6 @@
+#!/bin/bash
+
+for file in *.o
+do
+    ar rcs "${file%.o}.a" "$file"
+done
