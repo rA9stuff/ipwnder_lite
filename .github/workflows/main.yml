@@ -69,5 +69,15 @@ jobs:
       with:
         name: "s5l8950x.a"
         path: ${{ github.workspace }}/s5l8950x.a
+        
+    - name: rename main
+      run: mv main.a ipwnder_main.a
+      
+    - name: upload ipwnder_main.a
+      id: upload_ipwnder_main
+      uses: actions/upload-artifact@v2
+      with:
+        name: "ipwnder_main.a"
+        path: ${{ github.workspace }}/ipwnder_main.a
       
       
