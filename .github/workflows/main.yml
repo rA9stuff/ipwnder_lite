@@ -17,7 +17,7 @@ jobs:
     - name: download submodules
       run: git submodule update --init
     - name: modify checkm8_arm64.c
-      run: cd ra1npoc/src/exploit && awk -v ln=414 -v code="io_close(client)" 'NR == ln {print code} 1' checkm8_arm64.c > checkm8_arm64.c.new && mv checkm8_arm64.c.new checkm8_arm64.c
+      run: cd ra1npoc/src/exploit && awk -v ln=414 -v code="io_close(client);" 'NR == ln {print code} 1' checkm8_arm64.c > checkm8_arm64.c.new && mv checkm8_arm64.c.new checkm8_arm64.c
     - name: envdetails
       run: ls && echo && ls ra1npoc && pwd
     - name: regrets
