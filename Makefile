@@ -1,6 +1,6 @@
 IGCC		= xcrun -sdk iphoneos gcc -miphoneos-version-min=12.0
 MGCC_FLAGS	= -c -I./include -I./ra1npoc/src/include -framework IOKit -framework CoreFoundation -Os -Wall $(CFLAGS) -DDEBUG
-IGCC_FLAGS	= $(MGCC_FLAGS) -DIPHONEOS_ARM -I. -L./CI_scripts/libs -I/Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/System/Library/Frameworks/IOKit.framework/Versions/A/Headers/
+IGCC_FLAGS	= $(MGCC_FLAGS) -arch arm64 -DIPHONEOS_ARM -I. -L./CI_scripts/libs -I/Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/System/Library/Frameworks/IOKit.framework/Versions/A/Headers/
 
 SOURCE		= \
 		main.c \
