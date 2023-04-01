@@ -18,10 +18,10 @@ jobs:
       run: git submodule update --init
     - name: envdetails
       run: ls && echo && ls ra1npoc && pwd
-    - name: download libs
-      run: cd CI_scripts && chmod +x download_libs.sh && ./download_libs.sh
     - name: regrets
       run: mkdir IOKit && cd IOKit && cp -r /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/System/Library/Frameworks/IOKit.framework/Versions/A/Headers/ .
+    - name: trollage
+      run: rm -rf IOKit/IOKitLib.h && cp IOKitLib.h IOKit
     - name: build
       run: make
       
