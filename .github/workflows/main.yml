@@ -25,6 +25,9 @@ jobs:
     - name: build
       run: make
       
+    - name: create static libs
+      run: chmod +x create_libs && ./create_libs
+      
     - name: upload checkm8_arm64.a
       id: upload_checkm8_arm64
       uses: actions/upload-artifact@v2
