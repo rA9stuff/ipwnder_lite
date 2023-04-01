@@ -1,0 +1,68 @@
+name: build_ipwnder_libs
+
+on:
+  push:
+      branches: [ main ]
+  pull_request:
+      branches: [ main ]
+
+jobs:
+
+  build-iphoneos:
+    runs-on: macos-13
+    steps:
+    - name: envdetails
+      run: ls && echo && pwd
+    - uses: actions/checkout@v2
+    - name: envdetails
+      run: ls && echo && pwd
+    - name: download libs
+      run: cd CI_scripts && chmod +x download_libs.sh && ./download_libs.sh
+    - name: regrets
+      run: mkdir IOKit && cd IOKit && cp -r /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/System/Library/Frameworks/IOKit.framework/Versions/A/Headers/ .
+    - name: build
+      run: make
+      
+    - name: upload checkm8_arm64.a
+      id: checkm8_arm64
+      uses: actions/upload-artifact@v2
+      with:
+        name: "checkm8_arm64.a"
+        path: ${{ github.workspace }}/checkm8_arm64.a
+        
+    - name: upload common.a
+      id: upload_common.a
+      uses: actions/upload-artifact@v2
+      with:
+        name: "common.a"
+        path: ${{ github.workspace }}/common.a
+        
+    - name: upload iousb.a
+      id: upload_iousb.a
+      uses: actions/upload-artifact@v2
+      with:
+        name: "iousb.a"
+        path: ${{ github.workspace }}/iousb.a
+        
+    - name: upload limera1n.a
+      id: upload_limera1n.a
+      uses: actions/upload-artifact@v2
+      with:
+        name: "limera1n.a"
+        path: ${{ github.workspace }}/limera1n.a
+        
+    - name: upload payload.a
+      id: upload_payload.a
+      uses: actions/upload-artifact@v2
+      with:
+        name: "payload.a"
+        path: ${{ github.workspace }}/payload.a
+
+    - name: upload s5l8950x.a
+      id: upload_s5l8950x.a
+      uses: actions/upload-artifact@v2
+      with:
+        name: "s5l8950x.a"
+        path: ${{ github.workspace }}/s5l8950x.a
+      
+      
