@@ -1,5 +1,5 @@
 # ipwnder_lite  
-lightweight version of ipwnder.  
+lightweight version of ipwnder  
 
 
 ## Support  
