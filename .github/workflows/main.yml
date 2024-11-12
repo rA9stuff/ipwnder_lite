@@ -14,7 +14,7 @@ jobs:
     steps:
     - name: envdetails
       run: ls && echo && pwd
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     - name: download submodules
       run: git submodule update --init
     - name: modify checkm8_arm64.c
@@ -33,42 +33,42 @@ jobs:
       
     - name: upload checkm8_arm64.a
       id: upload_checkm8_arm64
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: "checkm8_arm64.a"
         path: ${{ github.workspace }}/checkm8_arm64.a
         
     - name: upload common.a
       id: upload_common
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: "common.a"
         path: ${{ github.workspace }}/common.a
         
     - name: upload iousb.a
       id: upload_iousb
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: "iousb.a"
         path: ${{ github.workspace }}/iousb.a
         
     - name: upload limera1n.a
       id: upload_limera1n
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: "limera1n.a"
         path: ${{ github.workspace }}/limera1n.a
         
     - name: upload payload.a
       id: upload_payload
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: "payload.a"
         path: ${{ github.workspace }}/payload.a
 
     - name: upload s5l8950x.a
       id: upload_s5l8950x
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: "s5l8950x.a"
         path: ${{ github.workspace }}/s5l8950x.a
@@ -78,7 +78,7 @@ jobs:
       
     - name: upload ipwnder_main.a
       id: upload_ipwnder_main
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: "ipwnder_main.a"
         path: ${{ github.workspace }}/ipwnder_main.a
